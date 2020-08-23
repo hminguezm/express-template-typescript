@@ -1,4 +1,4 @@
-version: '3.4'
+version: '4.3'
 services:
   node:
     env_file:
@@ -6,9 +6,9 @@ services:
     build:
       context: ./
       target: development
-    image: ${file(package.json):name}-nodejs-12:12.13.0-alpine
+    image: walmart-challenge-backend-nodejs-12:12.13.0-alpine
     working_dir: /app
-    command: yarn run start:full
+    command: yarn run start:dev
     restart: always
     networks:
       - web
@@ -21,4 +21,4 @@ services:
 networks:
   web:
     external:
-      name: ${file(package.json):name}-webgateway
+      name: walmart-challenge-backend-webgateway
