@@ -8,14 +8,17 @@ services:
       target: development
     image: ${file(package.json):name}-nodejs-12:12.13.0-alpine
     working_dir: /app
-    command: yarn run start:dev:docker
+    command: yarn run start:full
+    restart: always
     networks:
       - web
     volumes:
       - ./:/app
     ports:
-      - "3108:4000"
+      - "3108:3000"
       - "9108:9229"
 
 networks:
   web:
+    external:
+      name: ${file(package.json):name}-webgateway
