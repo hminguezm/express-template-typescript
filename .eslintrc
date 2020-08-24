@@ -34,7 +34,7 @@
     "max-len": [
       "error",
       {
-        "code": 80,
+        "code": 150,
         "ignoreComments": true,
         "ignoreTrailingComments": true,
         "ignoreUrls": true,
@@ -42,13 +42,15 @@
         "ignoreTemplateLiterals": true
       }
     ],
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-    },
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "json": "never"
+      }
+    ],
     "comma-dangle": [
       "error",
       {
@@ -86,3 +88,4 @@
     }
   }
 }
+

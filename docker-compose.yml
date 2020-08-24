@@ -1,4 +1,4 @@
-version: '4.3'
+version: '3.6'
 services:
   node:
     env_file:
@@ -6,9 +6,9 @@ services:
     build:
       context: ./
       target: development
-    image: walmart-challenge-backend-nodejs-12:12.13.0-alpine
+    image: nodejs-12:12.13.0-alpine
     working_dir: /app
-    command: yarn run start:dev
+    command: yarn run start:dev:full
     restart: always
     networks:
       - web
@@ -16,9 +16,6 @@ services:
       - ./:/app
     ports:
       - "3108:3000"
-      - "9108:9229"
 
 networks:
   web:
-    external:
-      name: walmart-challenge-backend-webgateway
