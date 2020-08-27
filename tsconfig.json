@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
     "target": "es5",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
+    "module": "commonjs",
+    "lib": ["es6"],
+    "allowJs": true,
     "outDir": "./dist",
     "baseUrl": "src",
+		"strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "paths": {
       "@src/*": [
         "src/*"
@@ -17,7 +20,7 @@
     }
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules/**/*.ts",

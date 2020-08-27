@@ -1,7 +1,8 @@
 {
   "env": {
-    "es2020": true,
-    "node": true
+    "es6": true,
+    "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base",
@@ -65,27 +66,12 @@
   "overrides": [],
   "settings": {
     "import/resolver": {
-      "alias": {
-        "map": [
-          [
-            "@src",
-            "./src"
-          ],
-          [
-            "@tests",
-            "./__tests__"
-          ]
-        ],
-        "extensions": [
-          ".ts",
-          ".js"
-        ]
-      },
       "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [
+          ".js",
+          ".ts"
+        ]
       }
     }
   }
 }
-

@@ -2,7 +2,7 @@ module.exports = {
   verbose: true,
   testEnvironment: 'node',
   transform: {
-    '^.+\\.ts?$': 'babel-jest',
+    '^.+\\.ts?$': 'ts-jest',
   },
   globals: {
     NODE_ENV: 'test',
@@ -12,7 +12,7 @@ module.exports = {
     '^@clients/(.*)$': '<rootDir>/src/clients/$1',
     '^@transformers/(.*)$': '<rootDir>/src/transformers/$1',
     '^@src/(.*)$': '<rootDir>/src/$1',
-    '^@tests/(.*)$': '<rootDir>/tests/$1',
+    '^@tests/(.*)$': '<rootDir>/__tests__/$1',
   },
   collectCoverage: true,
   coverageReporters: ['text'],
